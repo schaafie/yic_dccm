@@ -1,0 +1,30 @@
+<h1>Listing Functionalcomponents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Instantiable</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for functional_component <- @functionalcomponents do %>
+    <tr>
+      <td><%= functional_component.name %></td>
+      <td><%= functional_component.description %></td>
+      <td><%= functional_component.instantiable %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.functional_component_path(@conn, :show, functional_component) %></span>
+        <span><%= link "Edit", to: Routes.functional_component_path(@conn, :edit, functional_component) %></span>
+        <span><%= link "Delete", to: Routes.functional_component_path(@conn, :delete, functional_component), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Functional component", to: Routes.functional_component_path(@conn, :new) %></span>

@@ -1,0 +1,28 @@
+<h1>Show Content basetype</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @content_basetype.name %>
+  </li>
+
+  <li>
+    <strong>Handler:</strong>
+    <%= @content_basetype.handler %>
+  </li>
+
+  <li>
+    <strong>Format:</strong>
+    <%= @content_basetype.format %>
+  </li>
+
+  <li>
+    <strong>Validations:</strong>
+    <%= @content_basetype.validations %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.content_basetype_path(@conn, :edit, @content_basetype) %></span>
+<span><%= link "Back", to: Routes.content_basetype_path(@conn, :index) %></span>

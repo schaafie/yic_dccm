@@ -1,0 +1,23 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :publication_date %>
+  <%= datetime_select f, :publication_date %>
+  <%= error_tag f, :publication_date %>
+
+  <%= label f, :up_date %>
+  <%= datetime_select f, :up_date %>
+  <%= error_tag f, :up_date %>
+
+  <%= label f, :down_date %>
+  <%= datetime_select f, :down_date %>
+  <%= error_tag f, :down_date %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

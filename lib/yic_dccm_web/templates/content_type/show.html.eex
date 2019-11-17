@@ -1,0 +1,23 @@
+<h1>Show Content type</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @content_type.name %>
+  </li>
+
+  <li>
+    <strong>Definition:</strong>
+    <%= @content_type.definition %>
+  </li>
+
+  <li>
+    <strong>Instantiable:</strong>
+    <%= @content_type.instantiable %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.content_type_path(@conn, :edit, @content_type) %></span>
+<span><%= link "Back", to: Routes.content_type_path(@conn, :index) %></span>

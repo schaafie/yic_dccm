@@ -1,0 +1,30 @@
+<h1>Listing Visualcomponents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Instantiable</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for visual_component <- @visualcomponents do %>
+    <tr>
+      <td><%= visual_component.name %></td>
+      <td><%= visual_component.description %></td>
+      <td><%= visual_component.instantiable %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.visual_component_path(@conn, :show, visual_component) %></span>
+        <span><%= link "Edit", to: Routes.visual_component_path(@conn, :edit, visual_component) %></span>
+        <span><%= link "Delete", to: Routes.visual_component_path(@conn, :delete, visual_component), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Visual component", to: Routes.visual_component_path(@conn, :new) %></span>

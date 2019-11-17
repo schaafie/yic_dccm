@@ -1,0 +1,30 @@
+<h1>Listing Contenttemplates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Definition</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for content_template <- @contenttemplates do %>
+    <tr>
+      <td><%= content_template.name %></td>
+      <td><%= content_template.description %></td>
+      <td><%= content_template.definition %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.content_template_path(@conn, :show, content_template) %></span>
+        <span><%= link "Edit", to: Routes.content_template_path(@conn, :edit, content_template) %></span>
+        <span><%= link "Delete", to: Routes.content_template_path(@conn, :delete, content_template), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Content template", to: Routes.content_template_path(@conn, :new) %></span>

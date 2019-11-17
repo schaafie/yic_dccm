@@ -1,0 +1,23 @@
+<h1>Show Visual component</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @visual_component.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @visual_component.description %>
+  </li>
+
+  <li>
+    <strong>Instantiable:</strong>
+    <%= @visual_component.instantiable %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.visual_component_path(@conn, :edit, @visual_component) %></span>
+<span><%= link "Back", to: Routes.visual_component_path(@conn, :index) %></span>

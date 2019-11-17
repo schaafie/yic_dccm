@@ -1,0 +1,33 @@
+<h1>Show Page</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @page.title %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @page.location %>
+  </li>
+
+  <li>
+    <strong>Header:</strong>
+    <%= @page.header %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @page.body %>
+  </li>
+
+  <li>
+    <strong>Footer:</strong>
+    <%= @page.footer %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.page_path(@conn, :edit, @page) %></span>
+<span><%= link "Back", to: Routes.page_path(@conn, :index) %></span>

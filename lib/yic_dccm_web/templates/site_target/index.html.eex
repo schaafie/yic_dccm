@@ -1,0 +1,34 @@
+<h1>Listing Sitetargets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Method</th>
+      <th>Target url</th>
+      <th>Credentials</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for site_target <- @sitetargets do %>
+    <tr>
+      <td><%= site_target.name %></td>
+      <td><%= site_target.description %></td>
+      <td><%= site_target.method %></td>
+      <td><%= site_target.target_url %></td>
+      <td><%= site_target.credentials %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.site_target_path(@conn, :show, site_target) %></span>
+        <span><%= link "Edit", to: Routes.site_target_path(@conn, :edit, site_target) %></span>
+        <span><%= link "Delete", to: Routes.site_target_path(@conn, :delete, site_target), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Site target", to: Routes.site_target_path(@conn, :new) %></span>

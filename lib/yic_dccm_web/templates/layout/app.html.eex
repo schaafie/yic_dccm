@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>YicDccm · You're in control</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+  </head>
+  <body>
+    <header class="">
+      <section class="container">
+        <a href="/" class="header-logo">
+          <img src="<%= Routes.static_path(@conn, "/images/yic.png") %>" alt="YIC Logo"/>
+        </a>
+        <div>
+          <div class="apptitle">You're In Control</div>
+          <div class="appsubtitle">Digital Content & Channel Management</div>
+        </div>
+      </section>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div id="navigationbar" class="column column-20 nav_open">
+          <nav role="navigation" class="accordion">
+            <ul>
+              <li class="unselected">
+                <div>Users
+                  <img class="selected" src="<%= Routes.static_path(@conn, "/images/caret_down.png") %>" />
+                  <img class="unselected" src="<%= Routes.static_path(@conn, "/images/caret.png") %>" />
+                </div>
+                <ul>
+                  <li><a href="/users">Users</a></li>
+                  <li><a href="/roles">Roles</a></li>
+                  <li><a href="/members">Membership</a></li>
+                </ul>
+              </li>
+              <li class="unselected">
+                <div>Content
+                  <img class="selected" src="<%= Routes.static_path(@conn, "/images/caret_down.png") %>" />
+                  <img class="unselected" src="<%= Routes.static_path(@conn, "/images/caret.png") %>" />
+                </div>
+                <ul>
+                  <li><a href="/contentelements">Content</a></li>
+                  <li><a href="/contentbasetypes">Content base types</a></li>
+                  <li><a href="/contenttypes">Content types</a></li>
+                  <li><a href="/contenttemplates">Content publish templates</a></li>
+                  <li><a href="/contenttargets">Content publish targets</a></li>
+                  <li><a href="/contentpublications">Content publications</a></li>
+                </ul>
+              </li>
+              <li class="unselected">
+                <div>Web Channel
+                  <img class="selected" src="<%= Routes.static_path(@conn, "/images/caret_down.png") %>" />
+                  <img class="unselected" src="<%= Routes.static_path(@conn, "/images/caret.png") %>" />
+                </div>
+                <ul>
+                  <li><a href="/sites">Sites</a></li>
+                  <li><a href="/sitetargets">Site publish Target</a></li>
+                  <li><a href="/sitepublications">Site publications</a></li>
+                  <li><a href="/pages">Pages</a></li>
+                  <li><a href="/pagelayouts">Page Layouts</a></li>
+                  <li><a href="/websnippets">Web Snippets</a></li>
+                  <li><a href="/visualcomponents">Visual Page Components</a></li>
+                  <li><a href="/functionalcomponents">Functional Page Components</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div id="nav_knob" class="nav_open">
+              <img class="nav_closed" src="<%= Routes.static_path(@conn, "/images/caret_open.png") %>" >
+              <img class="nav_open" src="<%= Routes.static_path(@conn, "/images/caret_close.png") %>" >
+            </div>
+          </nav>
+        </div>
+        <div class="column">
+          <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+          <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+          <%= render @view_module, @view_template, assigns %>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

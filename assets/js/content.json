@@ -1,0 +1,74 @@
+{
+  "data": {
+    "data":[{
+      "multiple":false,"required":true,"type":"Titel","data":[{
+        "multiple":false,"required":true,"type":"String","data":[{
+          "data":"","format":null,"handler":"input","type":"base","validations":null
+        }]
+      }]
+    },{
+      "multiple":true,"required":true,"type":"Hoofdstuk", "data":[{
+        "multiple":true,"required":true,"type":"Paragraaf", "data":[{
+          "multiple":false,"required":true,"type":"Rich html", "data":[{
+            "data":"","format":null,"handler":"rich-editor","type":"base","validations":null
+          }]
+        }]
+      }]
+    }]
+    "type":"Artikel"
+  },
+  "definition":[
+    {"Titel":[{"multiple":false,"required":true,"type":"String"}]},
+    {"String":[{"format":null,"handler":"input","type":"base","validations":null}]},
+    {"Introductie":[{"multiple":false,"required":true,"type":"Paragraaf"}]},
+    {"Hoofdstuk":[{"multiple":true,"required":true,"type":"Paragraaf"}]},
+    {"Conclusie":[{"multiple":true,"required":true,"type":"Paragraaf"}]},
+    {"Rich html":[{"format":null,"handler":"rich-editor","type":"base","validations":null}]},
+    {"Paragraaf":[{"multiple":false,"required":true,"type":"Rich html"}]},
+    {"Artikel":[{"multiple":false,"required":true,"type":"Titel"},
+                {"multiple":false,"required":false,"type":"Introductie"},
+                {"multiple":true,"required":true,"type":"Hoofdstuk"},
+                {"multiple":false,"required":false,"type":"Conclusie"}]}
+  ],
+  "type":"Artikel"
+}
+
+{
+  type: "article",
+  definition:
+  [
+    article:
+    [
+      { type:"title", multiple:false, required:true},
+      { type:"intro", multiple:false, required:true},
+      { type:"chapters", multiple:false, required:true},
+      { type:"conclusion", multiple:false, required:false }
+    ],
+    intro: [ { type:"paragraph", multiple:true, required:true } ],
+    chapters: [ { type:"chapter", multiple:true, required:true } ],
+    chapter: [ { type:"paragraph", multiple:true, required:true } ],
+    conclusion: [ { type:"paragraph", multiple:true, required:true } ],
+    title: [ { type:"text", multiple:false, required:true } ],
+    paragraph: [ { type:"HTML", multiple:false, required:true } ],
+    HTML: [ {type:"base", ... } ]
+    text: [ {type:"base", ... } ]
+  ],
+  data:
+  { type: "article", refid: "art1", data: [
+    { type: "title", refid: "title1", data: [
+      { type:"text", data: "" }
+    ]},
+    { type: "intro", refid: "intro1", data: [
+      { type: "paragraph", refid: "par1", data: [
+        { type: "HTML", data: "" }
+      ]}
+    ]},
+    { type: "chapters", refid: "chs", data: [
+      { type: "chapter", refid: "cha1", data: [
+        { type: "paragraph", refid: "par2", data: [
+          { type:"HTML", data: "" }
+        ]}
+      ]}
+    ]}
+  ]}
+}

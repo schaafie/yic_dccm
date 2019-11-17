@@ -1,0 +1,5 @@
+<h1>Edit Visual component</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.visual_component_path(@conn, :update, @visual_component)) %>
+
+<span><%= link "Back", to: Routes.visual_component_path(@conn, :index) %></span>

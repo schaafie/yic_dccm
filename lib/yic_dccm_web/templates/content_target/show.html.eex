@@ -1,0 +1,38 @@
+<h1>Show Content target</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @content_target.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @content_target.description %>
+  </li>
+
+  <li>
+    <strong>Method:</strong>
+    <%= @content_target.method %>
+  </li>
+
+  <li>
+    <strong>Target url:</strong>
+    <%= @content_target.target_url %>
+  </li>
+
+  <li>
+    <strong>Credentials:</strong>
+    <%= @content_target.credentials %>
+  </li>
+
+  <li>
+    <strong>Version:</strong>
+    <%= @content_target.version %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.content_target_path(@conn, :edit, @content_target) %></span>
+<span><%= link "Back", to: Routes.content_target_path(@conn, :index) %></span>

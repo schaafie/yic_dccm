@@ -1,0 +1,5 @@
+<h1>Edit Content template</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.content_template_path(@conn, :update, @content_template)) %>
+
+<span><%= link "Back", to: Routes.content_template_path(@conn, :index) %></span>

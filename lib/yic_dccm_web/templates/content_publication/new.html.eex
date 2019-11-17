@@ -1,0 +1,5 @@
+<h1>New Content publication</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.content_publication_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.content_publication_path(@conn, :index) %></span>

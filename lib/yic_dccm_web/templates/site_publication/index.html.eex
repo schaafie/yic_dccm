@@ -1,0 +1,30 @@
+<h1>Listing Sitepublications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Publication date</th>
+      <th>Up date</th>
+      <th>Down date</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for site_publication <- @sitepublications do %>
+    <tr>
+      <td><%= site_publication.publication_date %></td>
+      <td><%= site_publication.up_date %></td>
+      <td><%= site_publication.down_date %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.site_publication_path(@conn, :show, site_publication) %></span>
+        <span><%= link "Edit", to: Routes.site_publication_path(@conn, :edit, site_publication) %></span>
+        <span><%= link "Delete", to: Routes.site_publication_path(@conn, :delete, site_publication), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Site publication", to: Routes.site_publication_path(@conn, :new) %></span>

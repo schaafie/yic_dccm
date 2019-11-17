@@ -1,0 +1,5 @@
+<h1>Edit Content target</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.content_target_path(@conn, :update, @content_target)) %>
+
+<span><%= link "Back", to: Routes.content_target_path(@conn, :index) %></span>

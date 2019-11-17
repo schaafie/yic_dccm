@@ -1,0 +1,33 @@
+<h1>Show Site target</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @site_target.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @site_target.description %>
+  </li>
+
+  <li>
+    <strong>Method:</strong>
+    <%= @site_target.method %>
+  </li>
+
+  <li>
+    <strong>Target url:</strong>
+    <%= @site_target.target_url %>
+  </li>
+
+  <li>
+    <strong>Credentials:</strong>
+    <%= @site_target.credentials %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.site_target_path(@conn, :edit, @site_target) %></span>
+<span><%= link "Back", to: Routes.site_target_path(@conn, :index) %></span>

@@ -1,0 +1,5 @@
+<h1>Edit Content basetype</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.content_basetype_path(@conn, :update, @content_basetype)) %>
+
+<span><%= link "Back", to: Routes.content_basetype_path(@conn, :index) %></span>

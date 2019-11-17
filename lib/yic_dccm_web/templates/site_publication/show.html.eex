@@ -1,0 +1,23 @@
+<h1>Show Site publication</h1>
+
+<ul>
+
+  <li>
+    <strong>Publication date:</strong>
+    <%= @site_publication.publication_date %>
+  </li>
+
+  <li>
+    <strong>Up date:</strong>
+    <%= @site_publication.up_date %>
+  </li>
+
+  <li>
+    <strong>Down date:</strong>
+    <%= @site_publication.down_date %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.site_publication_path(@conn, :edit, @site_publication) %></span>
+<span><%= link "Back", to: Routes.site_publication_path(@conn, :index) %></span>

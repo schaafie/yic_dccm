@@ -1,0 +1,23 @@
+<h1>Show Functional component</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @functional_component.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @functional_component.description %>
+  </li>
+
+  <li>
+    <strong>Instantiable:</strong>
+    <%= @functional_component.instantiable %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.functional_component_path(@conn, :edit, @functional_component) %></span>
+<span><%= link "Back", to: Routes.functional_component_path(@conn, :index) %></span>

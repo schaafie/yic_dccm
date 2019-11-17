@@ -1,0 +1,30 @@
+<h1>Listing Contentelements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for content_element <- @contentelements do %>
+    <tr>
+      <td><%= content_element.name %></td>
+      <td><%= content_element.description %></td>
+      <td><%= content_element.type_id %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.content_element_path(@conn, :show, content_element) %></span>
+        <span><%= link "Edit", to: Routes.content_element_path(@conn, :edit, content_element) %></span>
+        <span><%= link "Delete", to: Routes.content_element_path(@conn, :delete, content_element), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Content element", to: Routes.content_element_path(@conn, :new) %></span>

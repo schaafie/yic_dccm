@@ -1,0 +1,34 @@
+<h1>Listing Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Location</th>
+      <th>Header</th>
+      <th>Body</th>
+      <th>Footer</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for page <- @pages do %>
+    <tr>
+      <td><%= page.title %></td>
+      <td><%= page.location %></td>
+      <td><%= page.header %></td>
+      <td><%= page.body %></td>
+      <td><%= page.footer %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.page_path(@conn, :show, page) %></span>
+        <span><%= link "Edit", to: Routes.page_path(@conn, :edit, page) %></span>
+        <span><%= link "Delete", to: Routes.page_path(@conn, :delete, page), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Page", to: Routes.page_path(@conn, :new) %></span>

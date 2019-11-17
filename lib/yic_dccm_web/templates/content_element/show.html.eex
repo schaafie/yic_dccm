@@ -1,0 +1,23 @@
+<h1>Show Content element</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @content_element.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @content_element.description %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @content_element.type_id %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.content_element_path(@conn, :edit, @content_element) %></span>
+<span><%= link "Back", to: Routes.content_element_path(@conn, :index) %></span>

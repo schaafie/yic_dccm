@@ -1,0 +1,18 @@
+<h1>Show Web snippet</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @web_snippet.name %>
+  </li>
+
+  <li>
+    <strong>Data:</strong>
+    <%= @web_snippet.data %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.web_snippet_path(@conn, :edit, @web_snippet) %></span>
+<span><%= link "Back", to: Routes.web_snippet_path(@conn, :index) %></span>

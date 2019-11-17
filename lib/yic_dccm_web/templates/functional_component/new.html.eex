@@ -1,0 +1,5 @@
+<h1>New Functional component</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.functional_component_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.functional_component_path(@conn, :index) %></span>

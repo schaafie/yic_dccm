@@ -1,0 +1,36 @@
+<h1>Listing Contenttargets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Method</th>
+      <th>Target url</th>
+      <th>Credentials</th>
+      <th>Version</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for content_target <- @contenttargets do %>
+    <tr>
+      <td><%= content_target.name %></td>
+      <td><%= content_target.description %></td>
+      <td><%= content_target.method %></td>
+      <td><%= content_target.target_url %></td>
+      <td><%= content_target.credentials %></td>
+      <td><%= content_target.version %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.content_target_path(@conn, :show, content_target) %></span>
+        <span><%= link "Edit", to: Routes.content_target_path(@conn, :edit, content_target) %></span>
+        <span><%= link "Delete", to: Routes.content_target_path(@conn, :delete, content_target), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Content target", to: Routes.content_target_path(@conn, :new) %></span>

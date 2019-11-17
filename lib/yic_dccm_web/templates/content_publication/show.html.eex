@@ -1,0 +1,23 @@
+<h1>Show Content publication</h1>
+
+<ul>
+
+  <li>
+    <strong>Publication date:</strong>
+    <%= @content_publication.publication_date %>
+  </li>
+
+  <li>
+    <strong>Up date:</strong>
+    <%= @content_publication.up_date %>
+  </li>
+
+  <li>
+    <strong>Down date:</strong>
+    <%= @content_publication.down_date %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.content_publication_path(@conn, :edit, @content_publication) %></span>
+<span><%= link "Back", to: Routes.content_publication_path(@conn, :index) %></span>

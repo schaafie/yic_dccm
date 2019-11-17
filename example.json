@@ -1,0 +1,53 @@
+{
+  "type": "article",
+  "data": {
+    "type": "article", "data": [
+      {
+        "type": "titel", "required": true, "multiple": false, "data": [{
+          "type": "String", "required": true, "multiple": false, "data": [{
+            "handler": null, "type": "base", "validations": null, "format": null
+          }]
+        }]
+      },{
+        "type": "intro","required": false,"multiple": false,"data": [{
+          "type": "paragraph", "required": true, "multiple": true, "data": [{
+            "type": "Rich html","required": true,"multiple": false,"data": [{
+              "handler": null, "type": "base", "validations": null, "format": null
+            }]
+          }]
+        }]
+      },{
+        "type": "chapter","required": true,"multiple": true,"data": [{
+          "type": "paragraph","required": true,"multiple": true,"data": [{
+            "type": "Rich html","required": true,"multiple": false ,"data": [{
+              "handler": null,"type": "base","validations": null,"format": null
+            }]
+          }]
+        }]
+      },{
+        "type": "conclusion","required": false,"multiple": false,"data": [{
+          "type": "paragraph","required": true,"multiple": true,"data": [{
+            "type": "Rich html","required": true,"multiple": false,"data": [{
+              "handler": null,"type": "base","validations": null,"format": null
+            }]
+          }]
+        }]
+      }
+    ]
+  },
+  "definition": [
+    {"String": [{"handler": null,"type": "base","validations": null,"format": null}]},
+    {"titel": [{"multiple": false,"required": true,"type": "String"}]},
+    {"intro": [{"multiple": true,"required": true,"type": "paragraph"}]},
+    {"chapter": [{"multiple": true,"required": true,"type": "paragraph"}]},
+    {"Rich html": [{"handler": null,"type": "base","validations": null,"format": null}]},
+    {"paragraph": [{"multiple": true,"required": true,"type": "Rich html"}]},
+    {"conclusion": [{"multiple": true,"required": true,"type": "paragraph"}]},
+    {"article": [
+      {"multiple": false,"required": true,"type": "titel"},
+      {"multiple": false,"required": false,"type": "intro"},
+      {"multiple": true,"required": true,"type": "chapter"},
+      {"multiple": false,"required": false,"type": "conclusion"}
+    ]}
+  ]
+}

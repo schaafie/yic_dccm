@@ -1,0 +1,5 @@
+<h1>New Content element</h1>
+
+<%= render "formnew.html", Map.put(assigns, :action, Routes.content_element_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.content_element_path(@conn, :index) %></span>
